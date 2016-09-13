@@ -1,0 +1,97 @@
+//
+//  PrefixHeader.pch
+//  WinDevelopmentBoard
+//
+//  Created by winext on 15/11/16.
+//  Copyright © 2015年 Momon. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+//MMLog and MMDebugMethod
+#ifndef MMLog
+#ifdef DEBUG
+#define MMLog(...) do { NSLog(__VA_ARGS__); } while(0)
+#else
+#define MMLog(...)
+#endif
+#endif
+
+#ifndef MMDebugMethod
+#ifdef DEBUG
+#define MMDebugMethod() do { NSLog(@"%s", __func__); } while(0)
+#else
+#define MMDebugMethod()
+#endif
+#endif
+
+
+
+//#import "CALayer+XibConfiguration.h" // xib 设置边框颜色
+
+// 第三方登录
+//#import "WeiboSDK.h"        // 微博
+//#import <TencentOpenAPI/TencentOAuth.h>     // QQ
+
+#import "NetInfo.h"  
+
+#import "AppDelegate.h"
+
+#import "MMSingleton.h"    // 单例宏  // 置前
+
+#import "EnumBtnTag.h"       // 按钮Tag  前置于 userCache
+
+#import "DBAccount.h"        // 当前设备信息
+#import "UserCache.h"        // 用户缓存
+#import "AdressHeader.h"     // 接口
+#import "NotificationName.h" // 通知名
+#import "keysHeader.h"       // keys
+#import "Macros.h"           // 全局宏
+
+#import "DateHelper.h"      // 时间转换工具
+
+
+
+
+#import "UIImageView+AFNetworking.h" // 网络图片请求
+#import "UIImageView+WebCache.h"     // sd_setimage
+
+#import "UIImage+CreateImage.h"      // 创建Image
+
+
+#import "AFToolsManager.h"          // 请求文件工具
+
+#import "AFNetworkActivityIndicatorManager.h" // 加载状态栏指示
+
+#import "MBProgressHUD.h"  // 加载指示
+
+#import "NSString+Extension.h"
+
+
+
+#import "ShowPromptMessageTool.h"   // 小提示框 （自动消失）
+
+#import "FMDBManager.h"    // 数据库
+
+#import "DBOperator.h"
+
+#import "Masonry.h"        // 代码约束
+
+#import "MJRefresh.h"      // 刷新
+#import "MJExtension.h"    // 模型数组转换
+
+
+
+#endif
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
